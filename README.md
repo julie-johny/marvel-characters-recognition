@@ -1,2 +1,5 @@
 # marvel-characters-recognition
-This is face-recognition system can be used to identify characters in any Marvel movie.
+This is a face-recognition system which can be used to identify characters in any Marvel movie.
+
+'data' folder contains images of all the characters. 'names' file contains the names of characters according to the files in data folder.
+Python code encodes the recognised images and checks for similarity. 

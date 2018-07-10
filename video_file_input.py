@@ -38,25 +38,25 @@ while True:
         match = face_recognition.compare_faces(known_faces, face_encoding, tolerance=0.6)
         name = None
 
-#Names file contains the names to be displayed in order of images in data.
-file=open('names.txt','r')
-names=file.readlines()
+        #Names file contains the names to be displayed in order of images in data.
+        file=open('names.txt','r')
+        names=file.readlines()
 
-for i in range(0,45):
-        if match[i]:
-            name =names[i]
-        face_names.append(name)
+        for i in range(0,45):
+            if match[i]:
+                name =names[i]
+                face_names.append(name)
 
-for (top, right, bottom, left), name in zip(face_locations, face_names):
-    if not name:
-        continue
-    cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
-    cv2.rectangle(frame, (left, bottom - 25), (right, bottom), (0, 0, 255), cv2.FILLED)
-    font = cv2.FONT_HERSHEY_DUPLEX
-    cv2.putText(frame, name, (left + 6, bottom - 6), font, 0.5, (255, 255, 255), 1)
+    for (top, right, bottom, left), name in zip(face_locations, face_names):
+        if not name:
+            continue
+        cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+        cv2.rectangle(frame, (left, bottom - 25), (right, bottom), (0, 0, 255), cv2.FILLED)
+        font = cv2.FONT_HERSHEY_DUPLEX
+        cv2.putText(frame, name, (left + 6, bottom - 6), font, 0.5, (255, 255, 255), 1)
     
-print("Writing frame {} / {}".format(frame_number, length))
-
-output_movie.write(frame)
+    print("Writing frame {} / {}".format(frame_number, length))
+    output_movie.write(frame)
+    
 input_movie.release()
 cv2.destroyAllWindows()

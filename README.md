@@ -6,4 +6,6 @@ Python code encodes the recognised images and checks for similarity.
 
 Increasing the number of pictures and reducing the tolerance can imrove accuracy.
 
-Sample output in Infinity war trailer is attached.
+Sample output using Infinity war trailer is uploaded in YouTube.
+https://www.youtube.com/watch?v=mVnaSq52_7g
+
